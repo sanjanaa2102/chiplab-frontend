@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 
-// --- YOUR CONFIGURATION ---
+
 const firebaseConfig = {
   apiKey: "AIzaSyAFg4tcsLoZI50Gdomz8WOICs6TRjNTPh8",
   authDomain: "aethersim-project.firebaseapp.com",
@@ -12,14 +12,14 @@ const firebaseConfig = {
   measurementId: "G-NKV2B7SLH4"
 };
 
-// 1. Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
 
-// 2. Initialize Authentication
+
 export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider();
 
-// 3. Export Helper Functions (This makes login easy)
+
 export const loginWithGoogle = async () => {
   try {
     const result = await signInWithPopup(auth, provider);
