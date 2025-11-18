@@ -1,0 +1,138 @@
+/* Global styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1a202c; /* Dark background */
+  color: white;
+}
+
+/* App Layout */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: #171923; /* Darker gray */
+  color: white;
+}
+
+.navbar {
+  height: 48px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  border-bottom: 1px solid #2d3748;
+  background-color: #1a202c;
+  font-weight: bold;
+}
+
+.main-content {
+  display: flex;
+  flex: 1; /* Take up all remaining height */
+  overflow: hidden;
+}
+
+/* Component Library (Left) */
+.component-library {
+  width: 240px;
+  background-color: #1a202c;
+  border-right: 1px solid #2d3748;
+  padding: 16px;
+  flex-shrink: 0; /* Don't shrink */
+}
+
+.component-library h2 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.draggable-item {
+  background-color: #2d3748;
+  border: 1px solid #4a5568;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  text-align: center;
+  cursor: grab;
+  font-size: 0.875rem;
+}
+
+.draggable-item:hover {
+  background-color: #4a5568;
+}
+
+/* Canvas Area (Center) */
+.canvas-area {
+  flex: 1; /* Take up all remaining width */
+  overflow: auto;
+  position: relative;
+}
+
+/* Inspector (Right) */
+.inspector-panel {
+  width: 280px;
+  background-color: #1a202c;
+  border-left: 1px solid #2d3748;
+  padding: 16px;
+  flex-shrink: 0; /* Don't shrink */
+}
+
+.inspector-panel h2 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.inspector-placeholder {
+  font-size: 0.875rem;
+  color: #718096;
+}
+
+.form-control {
+  margin-bottom: 16px;
+}
+
+.form-control label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.form-control input[type='text'],
+.form-control input[type='range'] {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.form-control input[type='text'] {
+  background-color: #2d3748;
+  border: 1px solid #4a5568;
+  border-radius: 4px;
+  padding: 8px;
+  color: white;
+  font-size: 0.875rem;
+}
+.canvas-area {
+  flex: 1;
+  overflow: auto;
+  position: relative;
+  
+  /* A dark dot-grid background */
+  background-color: #2d3748; /* Dark blue-gray */
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: center center;
+}
