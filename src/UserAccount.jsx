@@ -1,4 +1,4 @@
-// src/UserAccount.jsx
+
 import React, { useState, useEffect } from 'react';
 import { auth, loginWithGoogle, logout } from './firebase';
 import { onAuthStateChanged } from 'firebase/auth';
@@ -6,7 +6,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 const UserAccount = () => {
   const [user, setUser] = useState(null);
 
-  // Listen for login state changes
+  
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
