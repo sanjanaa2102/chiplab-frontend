@@ -1,8 +1,8 @@
-// src/InspectorPanel.jsx
+
 import React from 'react';
 import TelemetryGraph from './TelemetryGraph.jsx';
 
-// --- MODIFIED: Now receives 'onDeleteBlock' ---
+
 const InspectorPanel = ({ blocks, onUpdateBlock, onDeleteBlock, selectedId }) => {
   const selectedBlock = blocks.find((block) => block.id === selectedId);
 
@@ -29,7 +29,7 @@ const InspectorPanel = ({ blocks, onUpdateBlock, onDeleteBlock, selectedId }) =>
     <div className="inspector-panel">
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
         <h2 style={{ margin: 0 }}>{selectedBlock.name}</h2>
-        {/* --- NEW: Delete Button --- */}
+        
         <button
           onClick={() => onDeleteBlock(selectedId)}
           style={{
