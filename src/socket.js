@@ -2,7 +2,7 @@
 import { io } from 'socket.io-client';
 
 
-const URL = 'https://chiplab-backend-xyz.onrender.com';
+const URL = 'https://chiplab-backend.onrender.com';
 
 
 const socket = io(URL, {
