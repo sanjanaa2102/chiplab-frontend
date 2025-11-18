@@ -1,9 +1,9 @@
-// src/CanvasArea.jsx
+
 
 import React, { useState, useRef, useEffect } from 'react';
 import { Stage, Layer, Rect, Transformer, Group, Text } from 'react-konva';
 
-// A more sophisticated color gradient
+
 const getRealColor = (temp) => {
   const ambient = 20;
   const maxTemp = 30;
@@ -25,8 +25,6 @@ const getRealColor = (temp) => {
   return `rgb(${r}, ${g}, ${b})`;
 };
 
-// --- NEW AESTHETIC BLOCK COMPONENT ---
-// This now has a "header" and "body" for a professional look
 const Block = ({ shapeProps, isSelected, onSelect, onChange }) => {
   const shapeRef = React.useRef();
   const trRef = React.useRef();
@@ -39,7 +37,7 @@ const Block = ({ shapeProps, isSelected, onSelect, onChange }) => {
   }, [isSelected]);
 
   const { name, fill, width, height, ...restProps } = shapeProps;
-  const headerHeight = 20; // Height of the title bar
+  const headerHeight = 20; 
 
   return (
     <React.Fragment>
@@ -47,8 +45,8 @@ const Block = ({ shapeProps, isSelected, onSelect, onChange }) => {
         onClick={onSelect}
         onTap={onSelect}
         ref={shapeRef}
-        {...restProps} // Passes x, y
-        draggable // <-- THE DRAG FIX IS HERE
+        {...restProps} 
+        draggable 
         onDragEnd={(e) => {
           onChange({ ...shapeProps, x: e.target.x(), y: e.target.y() });
         }}
@@ -114,7 +112,7 @@ const Block = ({ shapeProps, isSelected, onSelect, onChange }) => {
   );
 };
 
-// --- CanvasArea component ---
+
 const CanvasArea = ({
   blocks,
   onUpdateBlock,
@@ -128,7 +126,7 @@ const CanvasArea = ({
   const stageRef = useRef(null);
   const blockCounter = useRef({});
 
-  // Resize logic
+  
   useEffect(() => {
     const checkResize = () => {
       if (containerRef.current) {
@@ -145,7 +143,7 @@ const CanvasArea = ({
 
   const handleDragOver = (e) => e.preventDefault();
 
-  // Drop logic (with unique names)
+  
   const handleDrop = (e) => {
     e.preventDefault();
     if (!dragItemName.current) return;
@@ -169,7 +167,7 @@ const CanvasArea = ({
       name: newName,
       x: pointerPosition.x - 50,
       y: pointerPosition.y - 25,
-      width: 150, // Let's make blocks bigger by default
+      width: 150, 
       height: 100,
       dynamicLoad: 50,
       temperature: 20,
@@ -179,7 +177,7 @@ const CanvasArea = ({
     dragItemName.current = null;
   };
 
-  // Delete key listener
+ 
   useEffect(() => {
     const handleKeyDown = (e) => {
       if ((e.key === 'Delete' || e.key === 'Backspace') && selectedId) {
@@ -215,7 +213,7 @@ const CanvasArea = ({
                   id: block.id,
                   name: block.name,
                   x: block.x,
-                  y: block.y, // <-- THE TYPO FIX IS HERE (was block.f)
+                  y: block.y, 
                   width: block.width,
                   height: block.height,
                   dynamicLoad: block.dynamicLoad,
