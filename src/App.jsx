@@ -4,7 +4,6 @@ import CanvasArea from './CanvasArea.jsx';
 import InspectorPanel from './InspectorPanel.jsx';
 import UserAccount from './UserAccount.jsx';
 
-// --- Left Sidebar ---
 function ComponentLibrary({ onDragStart }) {
   return (
     <div className="component-library">
@@ -94,7 +93,6 @@ function ComponentLibrary({ onDragStart }) {
   );
 }
 
-// --- Main App ---
 function App() {
   const [blocks, setBlocks] = useState([]);
   const [selectedId, setSelectedId] = useState(null);
